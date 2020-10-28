@@ -1,13 +1,15 @@
 def encrypt_vigenere(plaintext: str, keyword: str) -> str:
 
     ciphertext =""
-    n=key
-    while len(n)<len(word):
+    mal=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    zag=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    n=keyword
+    while len(n)<len(plaintext):
             n+=n
-    for i in range(len(word)):
+    for i in range(len(plaintext)):
         index_key=mal.index(n[i])
-        if word[i].islower():
-            index=mal.index(word[i])
+        if plaintext[i].islower():
+            index=mal.index(plaintext[i])
             if index+index_key<26:
                 index+=index_key
                 ciphertext+=mal[index]
@@ -15,7 +17,7 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
                 index=index+index_key-26
                 ciphertext+=mal[index]
         else:
-            index=zag.index(word[i])
+            index=zag.index(plaintext[i])
             if index+index_key<26:
                 index+=index_key
                 ciphertext+=zag[index]
@@ -29,13 +31,15 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
 def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
  
     plaintext = ""
-    n=key
-    while len(n)<len(word):
+    mal=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    zag=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    n=keyword
+    while len(n)<len(ciphertext):
             n+=n
-    for i in range(len(word)):
+    for i in range(len(ciphertext)):
         index_key=mal.index(n[i])
-        if word[i].islower():
-            index=mal.index(word[i])
+        if ciphertext[i].islower():
+            index=mal.index(ciphertext[i])
             if index-index_key>=0:
                 index-=index_key
                 plaintext+=mal[index]
@@ -43,7 +47,7 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
                 index=index-index_key+26
                 plaintext+=mal[index]
         else:
-            index=zag.index(word[i])
+            index=zag.index(ciphertext[i])
             if index+index_key>=0:
                 index-=index_key
                 plaintext+=zag[index]
@@ -52,31 +56,7 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
                 plaintext+=zag[index]
     return plaintext
 
-mal=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-zag=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-ch=input('Зашифровать слово или расшифровать?')
-word=input('Введите слово = ')
-key=input('Введите слово-ключ = ')
-if (ch=='Зашифровать') or (ch=='зашифровать'):
-   key=key.lower()
-   print(encrypt_vigenere(word,key))
-if (ch=='Расшифровать') or (ch=='расшифровать'):
-    key=key.lower()
-    print(decrypt_vigenere(word,key))
-b=int(input('Если хотите воспользоваться программной снова, введите 1, иначе 0'))
-while b==1:
-    ch=input('Зашифровать слово или расшифровать?')
-    word=input('Введите слово = ')
-    key=input('Введите слово-ключ = ')
-    if (ch=='Зашифровать') or (ch=='зашифровать'):
-        key=key.lower()
-        print(encrypt_vigenere(word,key))
-    if (ch=='Расшифровать') or (ch=='расшифровать'):
-        key=key.lower()
-        print(decrypt_vigenere(word,key))
-    b=int(input('Если хотите воспльзоваться программной снова, введите 1, иначе 0')) 
-    
 
 
 
