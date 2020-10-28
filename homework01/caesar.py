@@ -2,6 +2,10 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
 
     ciphertext = ""
     for i in range(len(word)):
+      for i in range(len(word)):
+      if (word[i].isdigit())or(word[i]=='.'):
+        ciphertext+=word[i]
+      else:
         if word[i].islower():
             index=mal.index(word[i])
             if index==23:
@@ -32,6 +36,9 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
  
     plaintext = ""
     for i in range(len(word)):
+      if (word[i].isdigit())or(word[i]=='.'):
+        plaintext+=word[i]
+      else:
         if word[i].islower():
             index=mal.index(word[i])
             if index==0:
