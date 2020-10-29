@@ -1,6 +1,7 @@
 def encrypt_vigenere(plaintext: str, keyword: str) -> str:
 
     ciphertext =""
+    keyword=keyword.lower()
     mal=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     zag=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     n=keyword
@@ -34,6 +35,7 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
 def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
  
     plaintext = ""
+    keyword=keyword.lower()
     mal=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     zag=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     n=keyword
