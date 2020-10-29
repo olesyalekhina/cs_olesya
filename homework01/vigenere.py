@@ -8,9 +8,16 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     while len(n)<len(plaintext):
             n+=n
     for i in range(len(plaintext)):
-      if plaintext[i]==' ':
-        ciphertext+=plaintext[i]
-      else:
+     lr=0
+     for j in range(26):
+      if palintext[i]==mal[j]:
+       lr=1
+     for j in range(26):
+      if palintext[i]==zag[j]:
+       lr=1
+     if lr==0:
+      ciphertext+=plaintext[i]
+     else:
         index_key=mal.index(n[i])
         if plaintext[i].islower():
             index=mal.index(plaintext[i])
@@ -42,9 +49,16 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
     while len(n)<len(ciphertext):
             n+=n
     for i in range(len(ciphertext)):
-      if ciphertext[i]==' ':
-        plaintext+=ciphertext[i]
-      else:
+     lr=0
+     for j in range(26):
+      if ciphertext[i]==mal[j]:
+       lr=1
+     for j in range(26):
+      if ciphertext[i]==zag[j]:
+       lr=1
+     if lr==0:
+      plaintext+=ciphertext[i]
+     else:
         index_key=mal.index(n[i])
         if ciphertext[i].islower():
             index=mal.index(ciphertext[i])
