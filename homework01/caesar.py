@@ -8,10 +8,10 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
  for i in range(len(plaintext)):
   lr=0
   for j in range(26):
-   if palintext[i]==mal[j]:
+   if plaintext[i]==mal[j]:
     lr=1
   for j in range(26):
-   if palintext[i]==zag[j]:
+   if plaintext[i]==zag[j]:
     lr=1
   if lr==0:
    ciphertext+=plaintext[i]
