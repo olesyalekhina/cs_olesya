@@ -6,9 +6,16 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
  while shift>=26:
      shift-=26
  for i in range(len(plaintext)):
-     if (plaintext[i].isdigit())or(plaintext[i]=='.'):
-         ciphertext+=plaintext[i]
-     else:
+  lr=0
+  for j in range(26):
+   if palintext[i]==mal[j]:
+    lr=1
+  for j in range(26):
+   if palintext[i]==zag[j]:
+    lr=1
+  if lr==0:
+   ciphertext+=plaintext[i]
+  else:
          if plaintext[i].islower():
              index=mal.index(plaintext[i])
              if index+shift<26:
@@ -38,9 +45,16 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
  while shift>=26:
      shift-=26
  for i in range(len(ciphertext)):
-          if (ciphertext[i].isdigit())or(ciphertext[i]=='.'):
-            plaintext+=ciphertext[i]
-          else:
+    lr=0
+  for j in range(26):
+   if palintext[i]==mal[j]:
+    lr=1
+  for j in range(26):
+   if palintext[i]==zag[j]:
+    lr=1
+  if lr==0:
+   ciphertext+=plaintext[i]
+  else:
              if ciphertext[i].islower():
                 index=mal.index(ciphertext[i])
                 if index-shift>=0:
