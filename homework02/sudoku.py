@@ -177,7 +177,17 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     >>> check_solution(solution)
     True
     """
-    pass
+    grid = solve([["."] * 9 for _ in range(9)])  
+    N = 81 - min(81, N)
+    while N:
+        row = random.randint(0, 8)
+        column = random.randint(0, 8)
+        if grid is not None:
+            if grid[row][column] != ".":
+                grid[row][column] = "."
+                N -= 1
+    return grid  
+   
 
 
 if __name__ == "__main__":
